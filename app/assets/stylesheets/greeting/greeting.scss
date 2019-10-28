@@ -1,0 +1,206 @@
+
+.login-signup {
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-main {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid lightgray;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  width: 57.5%;
+  padding: 26px 20px;
+}
+
+.nav-one {
+  display: flex;
+  width: 300px;
+}
+
+.nav-two {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+}
+
+.nav-three {
+  display: flex;
+  justify-content: space-evenly;
+  width: 300px;
+}
+
+.nav-icon {
+  display: block;
+  height: 28px;
+  width: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(asset_path('camera.png'));
+}
+
+.nav-icon-links {
+  margin-left: 32px;
+}
+
+.nav-separator {
+  display: block;
+  height: 30px;
+  width: 13px;
+  border-right: 1px solid black;
+}
+
+.nav-logo {
+  display: block;
+  height: 34px;
+  width: 100px;
+  margin-left: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(asset_path('instagram-logo.png'));
+}
+
+.nav-search {
+
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.5em;
+}
+
+.section-main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.section-one {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding: 60px 20px 0px;
+  width: 55%;
+}
+
+.section-header {
+  display: flex;
+  height: 150px;
+  margin-bottom: 44px;
+}
+
+.section-header-user {
+  display: flex;
+  justify-content: center;
+  margin-right: 28px;
+  height: 150px;
+  width: 300px;
+}
+
+.section-header-userpic {
+  display: flex;
+  height: 160px;
+  width: 160px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(asset_path('user.jpg'));
+}
+
+.section-one-sub1 {
+  display: flex; 
+  justify-content: center;
+  height: 54px;
+  border-top: 0.5px solid lightgray;
+}
+
+.section-one-sub2 {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.pic {
+  height: 293px;
+  width: 293px;
+}
+
+.pic1 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(asset_path('pic1.jpg'));
+}
+
+.pic2 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(asset_path('pic2.jpg'));
+}
+
+.pic3 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(asset_path('pic3.jpg'));
+}
+
+.section-one-sub1-divs {
+  display: flex;
+  font-size: 0.8em;
+  text-decoration-line: none;
+  font-weight: 500;
+  align-items: center;
+  margin-right: 60px;
+  color: darkgray;
+}
+
+.section-header-buttons-main {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-size: 2em;
+  font-weight: 300;
+  margin: 0 0 20px 0; 
+}
+
+.section-header-button1 {
+  font-weight: 500;
+  font-size: .5em;
+  padding: 5px 9px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.gear {
+  background-color: transparent;
+  border: none;
+  font-size: .8em;
+  cursor: pointer;
+}
+
+.section-header-data {
+  display: flex;
+  height: 20px;
+  margin: 0 0 20px;
+}
+
+.section-header-nums {
+  font-weight: 600;
+}
+
+.section-header-name {
+  font-weight: 500;
+}
