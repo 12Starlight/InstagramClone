@@ -7,6 +7,9 @@
 
   json.users do 
     json.set! post.author.id do 
+      if @user 
+        json.postIds @posts.ids 
+      end
       json.partial! '/api/users/user', user: post.author 
     end
   end

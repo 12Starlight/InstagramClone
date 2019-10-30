@@ -5,6 +5,13 @@ export const fetchPosts = () => (
   })
 );
 
+export const fetchUserPosts = (userId) => (
+  $.ajax({
+    method: "GET",
+    url:  `/api/users/${userId}/posts`
+  })
+);
+
 export const fetchPost = id => (
   $.ajax({
     method: "GET",
@@ -20,13 +27,13 @@ export const createPost = post => (
   })
 );
 
-export const updatePost = post => (
-  $.ajax({
+export const updatePost = post => {
+  return $.ajax({
     method: "PATCH",
     url: `/api/posts/${post.id}`,
     data: { post }
   })
-);
+};
 
 export const deletePost = id => (
   $.ajax({

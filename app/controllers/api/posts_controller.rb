@@ -2,8 +2,14 @@ class Api::PostsController < ApplicationController
   before_action :require_logged_in, only: [:create, :destroy, :edit]
 
   def index 
-    @posts = Post.all 
-    render :index 
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+      @posts = @user.posts 
+      render :index 
+    else  
+      @posts = Post.all 
+      render :index 
+    end  
   end
 
   def show
@@ -31,14 +37,15 @@ class Api::PostsController < ApplicationController
     end    
   end
   
-  def edit
-    @post = Post.find(params[:id])
-    render :edit
-  end
+  # def edit
+  #   @post = Post.find(params[:id])
+  #   render :edit
+  # end
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
+
+    if @post.update(update_params)
       render :show 
     else
       render json: @post.errors.full_messages, status: 422
@@ -47,6 +54,7 @@ class Api::PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+
     if @post.destroy
       render :show 
     else
@@ -57,5 +65,9 @@ class Api::PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :description, photos: [])
+  end
+
+  def update_params
+    params.require(:post).permit(:title, :description)
   end
 end

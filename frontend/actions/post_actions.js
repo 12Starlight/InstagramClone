@@ -27,6 +27,10 @@ export const fetchPosts = () => dispatch => (
   PostApiUtil.fetchPosts().then( response => dispatch(receivePosts(response)))
 );
 
+export const fetchUserPosts = (userId) => dispatch => (
+  PostApiUtil.fetchUserPosts(userId).then( response => dispatch(receivePosts(response)))
+);
+
 export const fetchPost = id => dispatch => (
   PostApiUtil.fetchPost(id).then( response => dispatch(receiveSinglePost(response.post))) // remember the .then is returning the response
 );

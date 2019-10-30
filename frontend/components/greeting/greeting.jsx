@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Gear from "./gear"
+import ProfilePostContainer from "../posts/profile_post_container";
+
 
 
 const Greeting = ({ currentUser, logout }) => {
@@ -42,9 +44,7 @@ const Greeting = ({ currentUser, logout }) => {
             <a href="#" className="section-one-sub1-divs"><div><i className="fas fa-user-astronaut"></i></div><span>&nbsp; TAGGED</span></a>
           </div>
           <div className="section-one-sub2">
-            <div className="pic pic1"></div>
-            <div className="pic pic2"></div>
-            <div className="pic pic3"></div>
+            <ProfilePostContainer userId={ currentUser.id }/>
           </div>
         </div>
       </div>

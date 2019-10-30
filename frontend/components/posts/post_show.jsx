@@ -4,6 +4,33 @@ import postsReducer from "../../reducers/posts_reducer";
 
 
 class PostShow extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      open: false
+    }
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
+    this.ref = null;
+    this.deletePost = this.deletePost.bind(this);
+  }
+
+  open() {
+    this.setState({
+      open: true
+    })
+  }
+
+  close(e) {
+    if (!this.ref.contains(e.target)) {
+      this.setState({
+        open: false
+      })
+    }
+  }
+
+
   componentDidMount() {
     this.props.fetchPost(this.props.match.params.postId); 
   }
@@ -13,6 +40,12 @@ class PostShow extends React.Component {
       this.props.fetchPost(this.props.match.params.postId);
     }
   }
+
+  deletePost() {
+    this.props.deletePost(this.props.post.id)
+    this.props.history.push(`/`)
+  } 
+
 
 
   render() {
@@ -26,7 +59,7 @@ class PostShow extends React.Component {
         <div className="post_show_main"></div>
         <div className="post_show_inner_box">
           <div className="post_show_photo_container">
-            <img className="post_show_photo" src={ post.photos[0] } />
+            <img className="post_show_photo" src={post.photos[0]} />
           </div>
           
           <div className="post_show_data_container">
@@ -41,10 +74,24 @@ class PostShow extends React.Component {
                     <button className="post_show_following">Following</button> {/* appearance: none; */}
                   </div>
                 </div>  
+
                 <div className="post_show_button_wrapper">
                   <div className="post_show_button_main"></div>
-                  <div className="post_show_button_container"><button className="post_show_button"><span className="post_show_span">...</span></button></div>
+
+                  <div role="button" onClick={this.open} className="post_show_button_container"><div className="post_show_button_container"><button className="post_show_button"><span className="post_show_span">...</span></button></div></div>
+                  {this.state.open ? (
+                    <>
+                      <div className="modal" onClick={this.close}>
+                        <ul className="options-dropdown-menu" ref={(ref) => this.ref = ref} >
+                          <li className="options-dropdown-items" onClick={this.deletePost}>Delete Post</li>
+                          <Link to={`/posts/${post.id}/edit`} className="options-dropdown-items"><li>Update Post</li></Link>
+                          <Link to="/" className="options-dropdown-items-cancel"><li className="">Cancel</li></Link>
+                        </ul>
+                      </div>
+                    </>
+                  ) : null}
                 </div>
+
               </div>
             </div>
             

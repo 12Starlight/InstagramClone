@@ -55,3 +55,15 @@ export default Gear;
               // <li className="gear-dropdown-items">Privacy and Security</li>
               // <li className="gear-dropdown-items">Login Activity</li>
               // <li className="gear-dropdown-items">Emails from Instagram</li>
+
+
+// <li>
+//   <Link to={`/posts/${post.id}`}>
+//     {post.title}
+//   </Link>&nbsp;
+//       <Link to={`/posts/${post.id}/edit`}>
+//     Edit
+//       </Link>
+
+//   <button onClick={() => deletePost(post.id)}>Delete</button>
+// </li>

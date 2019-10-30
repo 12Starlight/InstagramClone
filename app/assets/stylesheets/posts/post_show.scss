@@ -148,8 +148,8 @@
 .post_show_button_container {
   display: flex;
   position: absolute;
-  top: 29%;
-  left: 80%;
+  top: 18.5%;
+  left: 64%;
   height: 50px;
   width: 50px;
   padding: 0;
@@ -167,6 +167,7 @@
   height: 100%;
   width: 100%;
   padding: 0;
+  outline: none;
   border: none;
   background: none;
   // border: 2px solid yellow;
@@ -480,7 +481,9 @@
   font-size: 1.1em;
   opacity: .7;
   color: #3897f0;
+  z-index: 0;
   border: none;
+  background-color: transparent;
   // border: 2px dotted fuchsia;
 }
 

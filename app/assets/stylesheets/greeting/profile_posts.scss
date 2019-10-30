@@ -1,0 +1,46 @@
+.profile_posts_wrapper {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 300px;
+  grid-gap: 20px;
+  box-sizing: border-box;
+  // border: 2px dotted fuchsia;
+}
+
+.profile_post_item {
+  display: flex;
+  width: 295px;
+  height: 295px;
+  // border: 1px solid rgb(0, 204, 255);
+}
+
+.divs-grid {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid blue; // #efefef;
+}
+
+.divs {
+  display: flex;
+  width: 100%;
+  border: 1px solid rgb(0, 204, 255);
+}
+
+.inner-divs {
+  display: flex;
+  width: 100%;
+  border: 2px dashed purple;
+}
+
+.sub-inner-divs {
+  display: flex;
+  width: 100%;
+  border: 2px dotted fuchsia;
+}
+
+.smallest {
+  width: 100%;
+  border: 1px solid blue;
+}

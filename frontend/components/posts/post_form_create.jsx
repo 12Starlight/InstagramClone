@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
 
-class PostForm extends React.Component {
+class CreatePostForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -126,4 +126,4 @@ class PostForm extends React.Component {
   }
 }
 
-export default PostForm;
+export default CreatePostForm;
