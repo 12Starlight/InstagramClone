@@ -65,10 +65,10 @@ class PostShow extends React.Component {
           <div className="post_show_data_container">
             
             <div className="post_show_header">{/* Title/description */}
-              <div className="post_show_icon_container"><span><i className="far fa-user-circle icon"></i></span></div>
+              <div className="post_show_icon_container"><span><Link to={`/users/${user.id}`}><i className="far fa-user-circle icon"></i></Link></span></div>
               <div className="post_show_userprofile_container">
                 <div className="post_show_userdata_container">
-                  <div className="post_show_username_container"><h3><a className="post_show_username" href="#">{user.username}</a></h3></div> {/* text-decoration: none; */}
+                  <div className="post_show_username_container"><h3><Link className="post_show_username" to={`/users/${user.id}`}>{user.username}</Link></h3></div> {/* text-decoration: none; */}
                   <div className="post_show_following_container">
                     <div className="post_show_dot">.</div>
                     <button className="post_show_following">Following</button> {/* appearance: none; */}
@@ -100,7 +100,7 @@ class PostShow extends React.Component {
                 <div roll="button" className="post_show_comments">
                   <li roll="menuitem" className="post_show_comments_menuitem">
                     <div className="post_show_comments_data">
-                      <div className="post_show_icon_container"><span className=""><i class="far fa-user-circle comments_icon"></i></span></div>
+                      <div className="post_show_icon_container"><span className=""><Link to={`/users/${user.id}`}><i class="far fa-user-circle comments_icon"></i></Link></span></div>
                       <div className="post_show_comments_data_container"><a className="post_show_comments_data_username" href="#">{user.username}</a><span className="post_show_comments_data_desc">{post.description}<a className="post_show_comments_data_hash" href="#">#</a></span></div>
                     </div>
                   </li>

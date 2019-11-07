@@ -27,6 +27,13 @@ export const createPost = post => (
   })
 );
 
+export const createPostLike = (id) => (
+  $.ajax({
+    method: "POST",
+    url: `/api/posts/${id}/like`
+  })
+);
+
 export const updatePost = post => {
   return $.ajax({
     method: "PATCH",
@@ -41,4 +48,11 @@ export const deletePost = id => (
     url: `/api/posts/${id}`
   })
 );
+
+export const deletePostLike = (id) => (
+  $.ajax({
+    method: "DELETE",
+    url: `/api/posts/${id}/unlike`
+  })
+)
 

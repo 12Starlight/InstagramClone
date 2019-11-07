@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
+  window.store = store; 
   let root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
   // ReactDOM.render(<h1>Welcome to Instagram</h1>, root);

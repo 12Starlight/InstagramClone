@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import usersReducer from "../../reducers/users_reducer";
 
 
-const PostIndexItem = ({ user, post, deletePost }) => {
+const PostIndexItem = ({ user, post, deletePost, userId }) => {
   return(
     <article className="post_index_article_container"> {/* this makes it smaller,causing last button to disappear */}
       <header className="post_index_article_header">
         <div className="post_index_article_header_profileicon" role="button" tableindex="0">
-          <a href="#"><i className="fas fa-user-graduate"></i></a>
+          <Link to={ `/users/${user.id}` }><i className="fas fa-user-graduate"></i></Link>
         </div>
         <div className="post_index_article_header_innerdiv">
           <div className="post_index_article_header_username_div">
-            <div className="post_index_article_header_username_innerdiv"><h2><a className="post_index_article_header_username_h2" title={ user.username } href="#">{ user.username }</a></h2></div>
+            <div className="post_index_article_header_username_innerdiv"><h2><Link className="post_index_article_header_username_h2" title={user.username} to={`/users/${user.id}`}>{ user.username }</Link></h2></div>
           </div>
           <div className="">
             <div><img></img></div>

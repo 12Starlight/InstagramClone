@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-  before_action :require_logged_in, only: [:create, :destroy, :edit]
+  before_action :require_logged_in, only: [:create, :destroy, :edit, :like, :unlike]
 
   def index 
     if params[:user_id]
@@ -49,6 +49,26 @@ class Api::PostsController < ApplicationController
       render :show 
     else
       render json: @post.errors.full_messages, status: 422
+    end
+  end
+
+  def like
+    like = Like.new(user_id: current_user.id, likeable_id: params[:id], likeable_type: "Post")
+
+    if like.save 
+      render json: like 
+    else
+      render json: like.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
+  def unlike
+    like = Like.find_by(user_id: current_user.id, likeable_id: params[:id], likeable_type: "Post")
+
+    if like.destroy 
+      render json: like 
+    else
+      render json: like.errors.full_messages, status: :unprocessable_entity
     end
   end
 

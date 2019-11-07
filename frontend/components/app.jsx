@@ -9,7 +9,7 @@ import {
   HashRouter
 } from "react-router-dom";
 
-import Header from "./greeting/header";
+import UserProfileContainer from "./greeting/user_profile_container";
 import Nav from "./nav/nav"
 import LogInFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
@@ -29,12 +29,12 @@ const App = () => (
       <AuthRoute exact path="/signup" component={ SignupFormContainer } />
       <ProtectedRoute exact path="/posts/new" component={ CreatePostFormContainer }/>
       <ProtectedRoute exact path="/posts/:postId/edit" component={EditPostFormContainer} />
-      <ProtectedRoute exact path="/posts/index" component={ PostIndexContainer } />
       <ProtectedRoute path="/posts/:postId" component={ PostShowContainer } />
-      <ProtectedRoute path="/" component={ Header }/>
-      </Switch>
-      </div>
-      );
+      <ProtectedRoute path="/users/:userId" component={ UserProfileContainer }/>
+      <ProtectedRoute exact path="/" component={ PostIndexContainer } />
+    </Switch>
+  </div>
+);
       
       
 export default App;

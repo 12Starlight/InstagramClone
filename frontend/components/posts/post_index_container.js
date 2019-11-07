@@ -4,7 +4,7 @@ import PostIndex from "./post_index";
 
 
 // mapStateToProps
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   posts: Object.keys(state.entities.posts).map( key => state.entities.posts[key]),
   users: state.entities.users 
 });
@@ -17,3 +17,12 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
+
+
+// const userId = ownProps.match.params.userId;
+// const user = users[userId];
+// return {
+//   currentUser: users[session.id],
+//   user: user,
+//   userId: userId
+// };
