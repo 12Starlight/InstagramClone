@@ -102,7 +102,7 @@ class PostShow extends React.Component {
                   <li roll="menuitem" className="post_show_comments_menuitem">
                     <div className="post_show_comments_data">
                       <div className="post_show_icon_container"><span className=""><Link to={`/users/${user.id}`}><i class="far fa-user-circle comments_icon"></i></Link></span></div>
-                      <div className="post_show_comments_data_container"><a className="post_show_comments_data_username" href="#">{user.username}</a><span className="post_show_comments_data_desc">{post.description}<a className="post_show_comments_data_hash" href="#">#</a></span></div>
+                      <div className="post_show_comments_data_container"><Link className="post_show_comments_data_username" to={`/users/${user.id}`}>{user.username}</Link><span className="post_show_comments_data_desc">{post.description}<a className="post_show_comments_data_hash" href="#">#</a></span></div>
                     </div>
                   </li>
                   <div className="post_show_comments_data_hours">17h</div>  
