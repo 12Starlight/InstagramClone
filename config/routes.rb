@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :posts do
       member do 
         post :like, to: "posts#like", as: "like"
-        post :unlike, to: "posts#unlike", as: "unlike"
+        delete :unlike, to: "posts#unlike", as: "unlike"
       end
     end
   end

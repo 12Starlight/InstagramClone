@@ -7,4 +7,11 @@ if post.photos.attached?
   json.photos photos_urls
 end 
 
+if current_user
+  json.liked current_user.likes.where(likeable_id: post.id, likeable_type: "Post")
+    .count > 0
+end
+
+json.likes post.likes.count 
+
 # {id: "", title: "", description: "" photos: []}

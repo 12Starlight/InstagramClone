@@ -57,6 +57,7 @@ class Api::PostsController < ApplicationController
 
     if like.save 
       render json: like 
+      # {user_id: 1, likeable_id: 2, likeable_type: "Post"}
     else
       render json: like.errors.full_messages, status: :unprocessable_entity
     end

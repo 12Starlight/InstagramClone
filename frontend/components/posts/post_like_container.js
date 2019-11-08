@@ -1,20 +1,20 @@
 import { connect} from "react-redux";
-import { createPostLike } from "../../actions/post_actions";
+import { createPostLike, deletePostLike } from "../../actions/post_actions";
 import PostLike from "./post_like"
 
 
 // mapStateToProps 
 const mapStateToProps = (state, ownProps) => {
   return({
-    likeId: "?",
-    formType: "Create Like"
+
   })
 };
 
 // mapDispatchToProps
 const mapDispatchToProps = (dispatch) => {
   return({
-    createPostLike: (likeId) => dispatch(createPostLike(likeId))
+    createPostLike: (postId) => dispatch(createPostLike(postId)),
+    deletePostLike: (postId) => dispatch(deletePostLike(postId))
   })
 };
 

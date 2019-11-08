@@ -429,6 +429,15 @@
   color: red;
 }
 
+.post_index_article_section_likes_innerspan_heart.red {
+  color: red;
+}
+
+.post_index_article_section_likes_innerspan_heart.red:hover {
+  color: black;
+}
+
+
 .post_index_article_section_likes_innerspan_bookmark {
   display: flex;
   align-items: center;

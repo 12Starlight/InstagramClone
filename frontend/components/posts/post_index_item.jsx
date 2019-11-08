@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import usersReducer from "../../reducers/users_reducer";
+import PostLikeContainer from "./post_like_container";
 
 
 const PostIndexItem = ({ user, post, deletePost, userId }) => {
@@ -32,14 +33,14 @@ const PostIndexItem = ({ user, post, deletePost, userId }) => {
       </div>
       <div className="post_index_article_data_wrapper">
         <section className="post_index_article_section_likes_container">
-          <span className="post_index_article_section_likes_outerspan"><button className="post_index_article_section_likes_button"><span className="post_index_article_section_likes_innerspan_heart"><i className="fas fa-heart"></i></span></button></span>
+          <PostLikeContainer id={post.id} liked={post.liked} />
           <span className="post_index_article_section_likes_outerspan"><button className="post_index_article_section_likes_button"><span className="post_index_article_section_likes_innerspan"><i className="far fa-comment"></i></span></button></span>
           <span className="post_index_article_section_likes_outerspan"><button className="post_index_article_section_likes_button"><span className="post_index_article_section_likes_innerspan"><i className="far fa-handshake"></i></span></button></span>
           <span className="post_index_article_section_likes_outerspan_bookmark"><button className="post_index_article_section_likes_button"><span className="post_index_article_section_likes_innerspan_bookmark"><i className="far fa-bookmark"></i></span></button></span>
         </section>
         <section className="post_index_article_section_likescount_section_container">
           <div className="post_index_article_section_likescount_container">
-            <div><button className="post_index_article_section_likescount_button"><span>937</span> likes</button></div>
+            <div><button className="post_index_article_section_likescount_button"><span>{post.likes}</span> likes</button></div>
           </div>
         </section>
         <div className="post_index_article_comments_wrapper">

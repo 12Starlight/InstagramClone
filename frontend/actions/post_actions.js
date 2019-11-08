@@ -19,11 +19,14 @@ const receiveSinglePost = post => ({
   post
 });
 
-const receivePostLike = (response) => ({
-  type: RECEIVE_POST_LIKE,
-  liked: true, 
-  postId: response.id 
-});
+const receivePostLike = (response) => {
+  console.log(response);
+    return ({
+    type: RECEIVE_POST_LIKE,
+    liked: true, 
+    postId: response.likeable_id
+  });
+}
 
 const removePost = postId => ({
   type: REMOVE_POST,
@@ -32,7 +35,8 @@ const removePost = postId => ({
 
 const removePostLike = (response) => ({
   type: REMOVE_POST_LIKE,
-  postId: response.id 
+  liked: false,
+  postId: response.likeable_id
 });
 
 

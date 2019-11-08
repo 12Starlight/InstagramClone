@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import postsReducer from "../../reducers/posts_reducer";
+import PostLikeContainer from "./post_like_container";
 
 
 class PostShow extends React.Component {
@@ -126,14 +127,14 @@ class PostShow extends React.Component {
               
               <div className="post_show_section_container">
                 <section className="post_show_likes_section_container">
-                  <span className="post_show_likes_section_outerspan"><button className="post_show_likes_section_button"><span className="post_show_likes_section_innerspan_heart"><i class="fas fa-heart inner"></i></span></button></span>
+                  <PostLikeContainer id={post.id} liked={post.liked} />
                   <span className="post_show_likes_section_outerspan"><button className="post_show_likes_section_button"><span className="post_show_likes_section_innerspan"><i class="far fa-comment inner"></i></span></button></span>
                   <span className="post_show_likes_section_outerspan"><button className="post_show_likes_section_button"><span className="post_show_likes_section_innerspan"><i class="far fa-handshake inner"></i></span></button></span>
                   <span className="post_show_likes_section_outerspan_bookmark"><button className="post_show_likes_section_button"><span className="post_show_likes_section_innerspan_bookmark"><i class="far fa-bookmark inner"></i></span></button></span>
                 </section>
 
                 <section className="post_show_likescount_section_container">
-                  <div className="post_show_likescount_container"><div ><button className="post_show_likescount_button"><span>9,341</span> likes</button></div></div>
+                  <div className="post_show_likescount_container"><div ><button className="post_show_likescount_button"><span>{post.likes}</span> likes</button></div></div>
                 </section>
                 <div className="post_show_time_container"><a className="post_show_timelink"><time className="post_show_time_linkspan">13 hours ago</time></a></div>
               </div>
