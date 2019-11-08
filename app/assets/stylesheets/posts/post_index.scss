@@ -420,9 +420,38 @@
   font-size: 2.4em;
   color: black;
   cursor: pointer;
+  animation: heartbeat2 .25s;
   width: 40px;
   height: 100%;
   // border: 2px dotted fuchsia;
+}
+
+@keyframes heartbeat1
+{
+  0%
+  {
+    transform: scale( 1 );
+  }
+  20%
+  {
+    transform: scale( 1.1 );
+  }
+  40%
+  {
+    transform: scale( 1.2 );
+  }
+  60%
+  {
+    transform: scale( 1.25 );
+  }
+  80%
+  {
+    transform: scale( 1.2 );
+  }
+  100%
+  {
+    transform: scale( .95 );
+  }
 }
 
 .post_index_article_section_likes_innerspan_heart:hover {
@@ -431,12 +460,40 @@
 
 .post_index_article_section_likes_innerspan_heart.red {
   color: red;
+  animation: heartbeat1 .25s;
+}
+
+@keyframes heartbeat2
+{
+  0%
+  {
+    transform: scale( 1 );
+  }
+  20%
+  {
+    transform: scale( 1.1 );
+  }
+  40%
+  {
+    transform: scale( 1.2 );
+  }
+  60%
+  {
+    transform: scale( 1.1 );
+  }
+  80%
+  {
+    transform: scale( 1 );
+  }
+  100%
+  {
+    transform: scale( .95 );
+  }
 }
 
 .post_index_article_section_likes_innerspan_heart.red:hover {
   color: black;
 }
-
 
 .post_index_article_section_likes_innerspan_bookmark {
   display: flex;

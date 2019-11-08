@@ -5,6 +5,8 @@ import { merge } from "lodash";
 const postsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   const posts = {};
+  let currentUserLikes = false; 
+  let likesCount = 0; 
   let post; 
 
   switch(action.type) {

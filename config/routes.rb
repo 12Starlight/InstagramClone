@@ -6,11 +6,21 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy]
     resources :posts do
+      resources :comments, only: [:create, :index]
       member do 
         post :like, to: "posts#like", as: "like"
         delete :unlike, to: "posts#unlike", as: "unlike"
       end
     end
+
+    resources :comments do 
+      member do 
+        # method url    controller#action    namespace  
+        post :like, to: "comments#like", as: "like"
+        delete :unlike, to: "bananna#unlike", as: "unlike"
+      end
+    end
+    resources :comments, only: [:destroy]
   end
 
   resources :posts, only: [:show]

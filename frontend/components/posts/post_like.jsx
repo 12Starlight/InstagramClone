@@ -10,7 +10,7 @@ class PostLike extends React.Component {
 
   handleLike(e) {
     e.preventDefault();
-    
+
     if (this.props.liked) {
       this.props.deletePostLike(this.props.id);
     } else {
@@ -40,7 +40,7 @@ class PostLike extends React.Component {
             className="post_index_article_section_likes_button"
             onClick={this.handleLike}
           >
-            <span className="post_index_article_section_likes_innerspan_heart">
+            <span className="post_index_article_section_likes_innerspan_heart black">
               <i className="fas fa-heart"></i>
             </span>
           </button>
