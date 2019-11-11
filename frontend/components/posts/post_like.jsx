@@ -41,7 +41,7 @@ class PostLike extends React.Component {
             onClick={this.handleLike}
           >
             <span className="post_index_article_section_likes_innerspan_heart black">
-              <i className="fas fa-heart"></i>
+              <i className="far fa-heart"></i>
             </span>
           </button>
         </span>

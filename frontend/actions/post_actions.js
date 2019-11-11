@@ -14,13 +14,14 @@ const receivePosts = response => ({
   users: response.users
 });
 
-const receiveSinglePost = post => ({
+const receiveSinglePost = response => ({
   type: RECEIVE_SINGLE_POST,
-  post
+  post: response.post,
+  user: response.user
 });
 
 const receivePostLike = (response) => {
-  console.log(response);
+  // console.log(response);
     return ({
     type: RECEIVE_POST_LIKE,
     liked: true, 
@@ -50,7 +51,7 @@ export const fetchUserPosts = (userId) => dispatch => (
 );
 
 export const fetchPost = id => dispatch => (
-  PostApiUtil.fetchPost(id).then( response => dispatch(receiveSinglePost(response.post))) // remember the .then is returning the response
+  PostApiUtil.fetchPost(id).then( response => dispatch(receiveSinglePost(response))) // remember the .then is returning the response
 );
 
 export const createPost = postSend => dispatch => (
@@ -62,7 +63,10 @@ export const createPostLike = (postId) => dispatch => (
 );
 
 export const updatePost = postSend => dispatch => (
-  PostApiUtil.updatePost(postSend).then( postReceive => dispatch(receiveSinglePost(postReceive)))
+  PostApiUtil.updatePost(postSend).then( postReceive => {
+    dispatch(receiveSinglePost(postReceive))
+    return postReceive;
+  })
 );
 
 export const deletePost = (id) => dispatch => (

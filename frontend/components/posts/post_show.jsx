@@ -33,20 +33,20 @@ class PostShow extends React.Component {
 
 
   componentDidMount() {
+    // debugger 
     this.props.fetchPost(this.props.match.params.postId); 
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.postId != this.props.match.params.postId) {
-      this.props.fetchPost(this.props.match.params.postId);
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.match.params.postId != this.props.match.params.postId) {
+  //     this.props.fetchPost(this.props.match.params.postId);
+  //   }
+  // }
 
   deletePost() {
     this.props.deletePost(this.props.post.id)
     this.props.history.push(`/`)
   } 
-
 
 
   render() {
@@ -55,6 +55,7 @@ class PostShow extends React.Component {
       return <div>Loading ...</div>
     }
 
+    // debugger 
     return (
       <div className="post_show_wrapper">
         <div className="post_show_main"></div>

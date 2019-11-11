@@ -10,13 +10,13 @@ class Api::CommentsController < ApplicationController
     else
       comments = Comment.all 
     end
-    render json: comments 
+    render json: comments
   end 
 
   def create 
-    comment = Comment.new(user_id: current_user.id, post_id: params[:post_id], body: comment_params.body)
+    @comment = Comment.new(user_id: current_user.id, post_id: params[:post_id], body: comment_params.body)
 
-    if comment.save
+    if @comment.save
       render json: comment, status: :created
     else
       render json: comment.errors.full_messages, status: :unprocessable_entity
@@ -24,8 +24,8 @@ class Api::CommentsController < ApplicationController
   end 
 
   def destroy
-    comment = Comment.find(params[:id])
-    comment.destroy 
+    @comment = Comment.find(params[:id])
+    @comment.destroy 
     render json: comment 
   end 
 
