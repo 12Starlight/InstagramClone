@@ -1,7 +1,8 @@
-export const fetchComments = () => (
+export const fetchComments = (post_id) => (
   $.ajax({
     method: "GET",
-    url: `/api/comments`
+    url: `/api/posts/${post_id}/comments`,
+    // data: { comments }
   })
 );
 
@@ -15,8 +16,8 @@ export const fetchComment = (id) => (
 export const createComment = (comment) => (
   $.ajax({
     method: "POST",
-    url: `/api/comments`,
-    data: { comment: comment.body }
+    url: `/api/posts/${comment.post_id}/comments`, // post_id is a key on the comments object, remember activeRecord changes the table into an object
+    data: { comment }
   })
 );
 

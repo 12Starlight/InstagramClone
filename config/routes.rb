@@ -13,17 +13,14 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :comments do 
+    resources :comments, only: [:destroy] do 
       member do 
         # method url    controller#action    namespace  
         post :like, to: "comments#like", as: "like"
         delete :unlike, to: "bananna#unlike", as: "unlike"
       end
     end
-    resources :comments, only: [:destroy]
   end
-
-  resources :posts, only: [:show]
 
   root "static_pages#root"
 end
