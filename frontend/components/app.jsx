@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 
 import UserProfileContainer from "./greeting/user_profile_container";
-import Nav from "./nav/nav"
+import NavContainer from "./nav/nav_container"
 import LogInFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
 import CreatePostFormContainer from "./posts/post_form_container_create";
@@ -23,7 +23,7 @@ import ProfilePostContainer from "./posts/profile_post_container";
 
 const App = () => (
   <div>
-      <LoggedInRoute path="/" component={ Nav } />
+      <LoggedInRoute path="/" component={ NavContainer } />
     <Switch>
       <AuthRoute exact path="/login" component={ LogInFormContainer } />
       <AuthRoute exact path="/signup" component={ SignupFormContainer } />

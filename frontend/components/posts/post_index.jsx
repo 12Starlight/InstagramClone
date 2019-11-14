@@ -17,7 +17,7 @@ class PostIndex extends React.Component {
 
 
   render() {
-    const { users } = this.props;
+    const { users, postId } = this.props;
     const posts = this.props.posts.map(post => {
       const userId = post.author_id
       const user = users[userId]
@@ -26,7 +26,9 @@ class PostIndex extends React.Component {
           key={ post.id }
           post={ post }
           user={ user }
+          postId={ post.id }
           deletePost={ this.props.deletePost }
+          fetchComments={ this.props.fetchComments }
         />
       );
     });

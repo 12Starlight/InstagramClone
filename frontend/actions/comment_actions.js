@@ -43,7 +43,12 @@ const removeCommentLike = (response) => ({
 
 // Thunk Actions
 export const fetchComments = (postId) => dispatch => (
-  CommentApiUtil.fetchComments(postId).then( response => dispatch(receiveComments(response )))
+  CommentApiUtil.fetchComments(postId).then( response => {
+    if (!response.comments) {
+      console.log(postId)
+    }
+    dispatch(receiveComments(response ))
+  })
 );
 
 export const fetchComment = (id) => dispatch => (

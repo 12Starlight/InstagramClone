@@ -350,7 +350,7 @@
   left: 0;
 }
 
-.post_index_article_data_wrapper {
+.post_index_article_data_wrapper { // come back to this 
   position: relative;
   display: flex;
   flex-direction: column;
@@ -360,7 +360,7 @@
   align-items: stretch;
   margin: 0;
   width: 614px;
-  height: 234.33px
+  min-height: 0;
 }
 
 .post_index_article_section_likes_container {
@@ -553,8 +553,8 @@
   padding: 0 16px 0 12px;
   box-sizing: border-box;
   width: 614px;
-  min-height: 0;
-  // border: 2px dotted fuchsia;
+  min-height: 135px;
+  border: 2px dotted fuchsia;
 }
 
 .post_index_comments_container {
@@ -653,7 +653,7 @@
   align-content: center;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-weight: 300;
-  font-size: .7em;
+  font-size: .6em;
   letter-spacing: .2px;
 }
 

@@ -6,7 +6,8 @@ import { withRouter } from "react-router-dom";
 
 // mapStateToProps
 const mapStateToProps = (state, ownProps) => {
-  const comment = { body: "", post_id: ownProps.match.params.postId }
+  // debugger 
+  const comment = { body: "", post_id: ownProps.match.params.postId || ownProps.postId }
   const formType = "Create Comment";
   return { comment, formType }
 }
