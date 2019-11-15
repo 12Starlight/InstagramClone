@@ -4,15 +4,15 @@ import postsReducer from "../../reducers/posts_reducer";
 
 
 class ProfilePosts extends React.Component {
-  componentDidMount() {
-    this.props.fetchUserPosts(this.props.userId);
-  }
+  // componentDidMount() {
+  //   this.props.fetchUserPosts(this.props.userId);
+  // }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.location !== prevProps.location) {
-      this.props.fetchUserPosts(this.props.userId);
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.location !== prevProps.location) {
+  //     this.props.fetchUserPosts(this.props.userId);
+  //   }
+  // }
   
 
   render() {
@@ -23,8 +23,10 @@ class ProfilePosts extends React.Component {
           key={post.id}
           post={post}
           user={user}
+          userId={this.props.userId}
           deletePost={this.props.deletePost}
           updatePost={this.props.updatePost}
+          fetchUserPosts={this.props.fetchUserPosts}
         />
       );
     });
