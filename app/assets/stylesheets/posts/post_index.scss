@@ -149,8 +149,9 @@
   -webkit-box-align: stretch;
   box-sizing: border-box;
   vertical-align: baseline;
+  text-decoration: none;
   font: inherit;
-  font-size: 2.3em;
+  font-size: 2.2em;
   color: rgb(123, 98, 235);
   width: 40px;
   height: 40px;
@@ -160,6 +161,14 @@
   // border-radius: 50%;
   // border: 3px solid blue;
   // border: 1px solid rgb(0, 204, 255);
+}
+
+.post_index_article_header_profileicon_link {
+  color: rgb(75, 51, 182);
+}
+
+.post_index_article_header_profileicon_link:hover {
+  color: rgb(106, 80, 223);
 }
 
 .post_index_article_header_innerdiv {

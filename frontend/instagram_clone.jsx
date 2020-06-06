@@ -2,6 +2,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { login, signup, logout } from "./util/session_api_util"
+import { fetchFollowers, fetchFollower, createFollower, deleteFollower } from "./util/followers_api_util";
+
 
 // Component Imports
 import Root from "./components/root";
@@ -35,6 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.store = store; 
   let root = document.getElementById("root");
+
+
+  // Testing Follower api_util 
+  window.fetchFollowers = fetchFollowers;
+  window.fetchFollower = fetchFollower; 
+  window.createFollower = createFollower; 
+  window.deleteFollower = deleteFollower; 
+
   ReactDOM.render(<Root store={store} />, root);
   // ReactDOM.render(<h1>Welcome to Instagram</h1>, root);
 });

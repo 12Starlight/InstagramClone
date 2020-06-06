@@ -32,7 +32,7 @@ class PostIndexItem extends React.Component {
             role="button"
             tableindex="0"
           >
-            <Link to={`/users/${user.id}`}>
+            <Link className="post_index_article_header_profileicon_link" to={`/users/${user.id}`}>
               <i className="fas fa-user-graduate"></i>
             </Link>
           </div>

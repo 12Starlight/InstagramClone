@@ -12,8 +12,9 @@ class User < ApplicationRecord
     class_name: :Post 
 
   has_many :likes 
+  has_many :followers
 
-
+  
   # Main Methods
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
