@@ -34,7 +34,7 @@ class PostIndex extends React.Component {
     });
 
     if (posts.length < 1) {
-      return <h3>Please create a post 😎</h3>
+      return <div className='no-posts' ><h3>Please create a post 😎</h3></div>
     }
 
     return(
