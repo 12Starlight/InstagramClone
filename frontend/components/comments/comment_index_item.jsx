@@ -38,24 +38,18 @@ const CommentIndexItem = ({ user, comment, commentUser, post, deleteComment, cre
                 </span>
                 <div className="comment_index_item_time_wrapper">
                   <div className="comment_index_item_time_container div">
-                    <time className="comment_index_item_time time">3h</time>
+                    <time className="comment_index_item_time time">{/*3h*/}</time>
                     <button className="comment_index_item_likes">
-                      ? likes
+                      {/*? likes*/}
                     </button>
-                    <button className="comment_index_item_reply">Reply</button>
+                    <button className="comment_index_item_reply">{/*Reply*/}</button>
                   </div>
                 </div>
               </div>
             </div>
 
             <div></div>
-            <span className="comment_index_item_likes_button_wrapper">
-              <button className="comment_index_item_likes_button">
-                <span className="post_index_article_section_likes_innerspan_heart red">
-                  <i className="fas fa-heart"></i>
-                </span>
-              </button>
-            </span>
+
           </div>
         </li>
       </div>
@@ -65,3 +59,11 @@ const CommentIndexItem = ({ user, comment, commentUser, post, deleteComment, cre
 
 
 export default CommentIndexItem; 
+
+// <span className="comment_index_item_likes_button_wrapper">
+//   <button className="comment_index_item_likes_button">
+//     <span className="post_index_article_section_likes_innerspan_heart red">
+//       <i className="fas fa-heart"></i>
+//     </span>
+//   </button>
+// </span>

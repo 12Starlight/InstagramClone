@@ -6,6 +6,7 @@ class CreateCommentForm extends React.Component {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.enter = this.enter.bind(this); 
     this.state = this.props.comment; 
   }
 
@@ -23,6 +24,14 @@ class CreateCommentForm extends React.Component {
     this.props.action(this.state); 
   }
 
+  enter(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      this.setState({ body: ''});
+      this.props.action(this.state);
+    }
+  }
+
 
   render() {
     const { comment, formType } = this.props; 
@@ -30,7 +39,7 @@ class CreateCommentForm extends React.Component {
     return (
       <section className="post_show_section_form_wrapper">
         <div className="post_show_section_form_container">
-          <form className="post_show_section_form" onSubmit={this.handleSubmit}>
+          <form className="post_show_section_form" onKeyPress={this.enter} onSubmit={this.handleSubmit}>
             <textarea 
               aria-label="Add a comment..." 
               placeholder="Add a comment..." 

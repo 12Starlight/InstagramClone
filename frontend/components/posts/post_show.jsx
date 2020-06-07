@@ -87,15 +87,15 @@ class PostShow extends React.Component {
                     </div>{" "}
                     {/* text-decoration: none; */}
                     <div className="post_show_following_container">
-                      <div className="post_show_dot">.</div>
+                      <div className="post_show_dot">{/*.*/}</div>
                       <button className="post_show_following">
-                        Following
+                        {/*Following*/}
                       </button>{" "}
                       {/* appearance: none; */}
                     </div>
                   </div>
 
-                  <div className="post_show_button_wrapper">
+                  <div className="post_show_button_wrappe">
                     <div className="post_show_button_main"></div>
 
                     <div
@@ -161,27 +161,6 @@ class PostShow extends React.Component {
               <div className="post_show_data_container">
                 <section className="post_show_likes_section_container">
                   <PostLikeContainer id={post.id} liked={post.liked} />
-                  <span className="post_show_likes_section_outerspan">
-                    <button className="post_show_likes_section_button">
-                      <span className="post_show_likes_section_innerspan">
-                        <i className="far fa-comment inner"></i>
-                      </span>
-                    </button>
-                  </span>
-                  <span className="post_show_likes_section_outerspan">
-                    <button className="post_show_likes_section_button">
-                      <span className="post_show_likes_section_innerspan">
-                        <i className="far fa-handshake inner"></i>
-                      </span>
-                    </button>
-                  </span>
-                  <span className="post_show_likes_section_outerspan_bookmark">
-                    <button className="post_show_likes_section_button">
-                      <span className="post_show_likes_section_innerspan_bookmark">
-                        <i className="far fa-bookmark inner"></i>
-                      </span>
-                    </button>
-                  </span>
                 </section>
                 <section className="post_show_likescount_section_container">
                   <div className="post_show_likescount_container">
@@ -198,7 +177,7 @@ class PostShow extends React.Component {
                 <div className="post_show_time_container">
                   <a className="post_show_timelink">
                     <time className="post_show_time_linkspan">
-                      13 hours ago
+                      hours ago
                     </time>
                   </a>
                 </div>
@@ -305,3 +284,25 @@ export default PostShow;
           //     <CreateCommentFormContainer />
           //   </div> 
           // </div>
+
+// <span className="post_show_likes_section_outerspan">
+//   <button className="post_show_likes_section_button">
+//     <span className="post_show_likes_section_innerspan">
+//       <i className="far fa-comment inner"></i>
+//     </span>
+//   </button>
+// </span>
+//   <span className="post_show_likes_section_outerspan">
+//     <button className="post_show_likes_section_button">
+//       <span className="post_show_likes_section_innerspan">
+//         <i className="far fa-handshake inner"></i>
+//       </span>
+//     </button>
+//   </span>
+//   <span className="post_show_likes_section_outerspan_bookmark">
+//     <button className="post_show_likes_section_button">
+//       <span className="post_show_likes_section_innerspan_bookmark">
+//         <i className="far fa-bookmark inner"></i>
+//       </span>
+//     </button>
+//   </span>
