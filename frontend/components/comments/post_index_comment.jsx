@@ -46,7 +46,7 @@ class PostIndexComment extends React.Component {
               </div>
             </div>
           </li>
-          <Link to={`/posts/${post.id}`} className="post_index_main_comment_link"><li className="post_index_main_comment_button_wrapper li"><button className="post_index_main_comment_button">View all <span>{"?"}</span> comments</button></li></Link>
+          <Link to={`/posts/${post.id}`} className="post_index_main_comment_link"><li className="post_index_main_comment_button_wrapper li"><button className="post_index_main_comment_button">View all <span>{comments.length}</span> comments</button></li></Link>
           {allComments[allComments.length - 1]}
           {allComments[allComments.length - 2]}
         </div>

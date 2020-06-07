@@ -33,7 +33,7 @@ const PostIndexCommentItem = ({
             <span className="post_index_comment_item_likes_button_wrapper">
               <button className="post_index_comment_item_likes_button">
                 <span className="post_index_article_section_likes_innerspan_heart red">
-                  <i className="fas fa-heart"></i>
+                  <i className=""></i>
                 </span>
               </button>
             </span>

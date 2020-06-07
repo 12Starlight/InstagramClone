@@ -126,7 +126,7 @@ class PostIndexItem extends React.Component {
           <div className="post_index_article_time_container">
             <a className="post_index_article_timelink">
               <time className="post_index_article_time_linkspan">
-                9 hours ago
+                {'' + 'Hours Ago'}
               </time>
             </a>
           </div>
