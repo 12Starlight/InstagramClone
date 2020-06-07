@@ -20,7 +20,7 @@ class Nav extends React.Component {
 
           <div className="nav-two">
             <div>
-              <textarea placeholder="Search" value=""></textarea>
+
             </div>
           </div>
 
@@ -47,3 +47,6 @@ class Nav extends React.Component {
 
 
 export default Nav;
+
+
+// <textarea placeholder="Search" value=""></textarea>
