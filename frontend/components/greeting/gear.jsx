@@ -35,7 +35,6 @@ class Gear extends React.Component {
           <>
             <div className="modal" onClick={ this.close }>
               <ul className="gear-dropdown-menu" ref={(ref) => this.ref = ref} >
-                <li className="gear-dropdown-items">Change Password</li>
                 <li className="gear-dropdown-items" onClick={this.props.logout}>Logout</li>
               </ul>
             </div>
@@ -56,6 +55,9 @@ export default Gear;
               // <li className="gear-dropdown-items">Login Activity</li>
               // <li className="gear-dropdown-items">Emails from Instagram</li>
 
+
+
+// <li className="gear-dropdown-items">Change Password</li>
 
 // <li>
 //   <Link to={`/posts/${post.id}`}>
