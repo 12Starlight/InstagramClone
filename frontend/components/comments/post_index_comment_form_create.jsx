@@ -5,6 +5,7 @@ class PostIndexCommentFormCreate extends React.Component {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.enter = this.enter.bind(this); 
     this.state = this.props.comment;
   }
 
@@ -17,9 +18,18 @@ class PostIndexCommentFormCreate extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault(); 
     this.setState({ body: "" });
     this.props.action(this.state);
+  }
+
+  enter(e) {
+    // debugger; 
+    if (e.key === 'Enter') {
+      e.preventDefault(); 
+      this.setState({ body: "" });
+      this.props.action(this.state);
+    } 
   }
 
   render() {
@@ -28,7 +38,7 @@ class PostIndexCommentFormCreate extends React.Component {
     return (
       <section className="post_index_comment_section_form_wrapper">
         <div className="post_index_comment_section_form_container">
-          <form className="post_index_comment_section_form" onSubmit={this.handleSubmit}>
+          <form className="post_index_comment_section_form" onKeyPress={this.enter} onSubmit={this.handleSubmit} >
             <textarea
               aria-label="Add a comment..."
               placeholder="Add a comment..."
