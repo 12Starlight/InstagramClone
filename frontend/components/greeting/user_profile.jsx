@@ -46,7 +46,7 @@ class UserProfile extends React.Component {
             </div>
             <div className="section-one-sub1">
               <a href="#" className="section-one-sub1-divs"><div><i className="fas fa-th"></i></div><span>&nbsp; POSTS</span></a>
-              <a href="/#/posts/new" className="section-one-sub1-divs"><div><i class="far fa-plus-square"></i></div><span>&nbsp; Create</span></a>
+              <a href="/#/posts/new" className="section-one-sub1-divs"><div><i class="far fa-plus-square"></i></div><span>&nbsp; CREATE</span></a>
             </div>
             <div className="section-one-sub2">
               <ProfilePostContainer userId={ user.id }/>
