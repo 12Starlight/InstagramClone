@@ -19,10 +19,12 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    const { user, logout, currentUser, userId } = this.props;
+    const { user, logout, postCount } = this.props;
     if (!user) {
       return "Loading ..."
     }
+
+    debugger; 
 
     return (
       <div className="main"> 
@@ -34,23 +36,16 @@ class UserProfile extends React.Component {
               </div>
               <div>
                 <div className="section-header-buttons-main">
-                  {user.username} &emsp;
-                  <button className="section-header-button1">Edit Profile</button> &emsp;
+                  <div className='section-header-username'>{user.username}</div>
                   <Gear logout={ logout } /> 
                 </div>
                 <div className="section-header-data">
-                  <div><strong className="section-header-nums">34</strong> posts</div>&emsp;&emsp;
-                  <div><strong className="section-header-nums">490</strong> followers</div>&emsp;&emsp;
-                  <div><strong className="section-header-nums">300</strong> following</div>
+                  <div><strong className="section-header-nums">Posts: {postCount}</strong></div>
                 </div>
-                <div className="section-header-name">Dave Ganett</div>
               </div>
             </div>
             <div className="section-one-sub1">
               <a href="#" className="section-one-sub1-divs"><div><i className="fas fa-th"></i></div><span>&nbsp; POSTS</span></a>
-              <a href="#" className="section-one-sub1-divs"><div><i className="fab fa-youtube"></i></div><span>&nbsp; IGTV</span></a>
-              <a href="#" className="section-one-sub1-divs"><div><i className="far fa-bookmark"></i></div><span>&nbsp; SAVED</span></a>
-              <a href="#" className="section-one-sub1-divs"><div><i className="fas fa-user-astronaut"></i></div><span>&nbsp; TAGGED</span></a>
             </div>
             <div className="section-one-sub2">
               <ProfilePostContainer userId={ user.id }/>
@@ -61,12 +56,26 @@ class UserProfile extends React.Component {
       </div>
     )
 
-    // <hgroup className="header-group">
-    //   <h2 className="header-name">Hi, { user.username }!</h2>
-    //   <button className="header-button" onClick={ logout }>Log Out</button>
-    // </hgroup>
+
   }
 };
 
 
 export default UserProfile;
+
+
+
+
+
+// <a href="#" className="section-one-sub1-divs"><div><i className="fab fa-youtube"></i></div><span>&nbsp; IGTV</span></a>
+// <a href="#" className="section-one-sub1-divs"><div><i className="far fa-bookmark"></i></div><span>&nbsp; SAVED</span></a>
+// <a href="#" className="section-one-sub1-divs"><div><i className="fas fa-user-astronaut"></i></div><span>&nbsp; TAGGED</span></a>
+
+// <button className="section-header-button1">Edit Profile</button> & emsp;
+
+// <div className="section-header-name">{user.username}</div>
+
+// <hgroup className="header-group">
+//   <h2 className="header-name">Hi, { user.username }!</h2>
+//   <button className="header-button" onClick={ logout }>Log Out</button>
+// </hgroup>
