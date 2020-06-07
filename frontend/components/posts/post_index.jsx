@@ -41,33 +41,14 @@ class PostIndex extends React.Component {
             <div className="post_index_section_left">
               <div className="post_index_article_wrapper"> {/* this container is larger */}
                 { posts }
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
               </div>
             </div>
 
             <div></div>
           </div>
 
-          <div></div>
-          <div className="post_index_section_right">
-              <div className="slider">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
-              </div>
-          </div>       
+          <div></div> 
         </section>
-          <div></div>
-          <div></div>
         </main>
       </div>
     );
@@ -76,3 +57,18 @@ class PostIndex extends React.Component {
 
 
 export default PostIndex;
+
+
+// <div className="post_index_section_right">
+//   <div className="slider">
+//     <div>1</div>
+//     <div>2</div>
+//     <div>3</div>
+//     <div>4</div>
+//     <div>5</div>
+//     <div>6</div>
+//     <div>7</div>
+//     <div>8</div>
+//     <div>9</div>
+//   </div>
+// </div>      

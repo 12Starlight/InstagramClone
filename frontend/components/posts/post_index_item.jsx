@@ -7,7 +7,38 @@ import PostIndexCommentFormCreateContainer from "../comments/post_index_comment_
 
 
 class PostIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      open: false
+    }
+
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
+    this.ref = null;
+    this.deletePost = this.deletePost.bind(this); 
+  }
+
+  open() {
+    this.setState({
+      open: true
+    })
+  }
+
+  close(e) {
+    if (!this.ref.contains(e.target)) {
+      this.setState({
+        open: false
+      })
+    }
+  }
   
+  deletePost() {
+    this.props.deletePost(this.props.post.id)
+    this.props.history.push(`/`)
+  } 
+
   componentDidMount() {
     // debugger 
     this.props.fetchComments(this.props.postId);
@@ -78,27 +109,7 @@ class PostIndexItem extends React.Component {
         <div className="post_index_article_data_wrapper">
           <section className="post_index_article_section_likes_container">
             <PostLikeContainer id={post.id} liked={post.liked} />
-            <span className="post_index_article_section_likes_outerspan">
-              <button className="post_index_article_section_likes_button">
-                <span className="post_index_article_section_likes_innerspan">
-                  <i className="far fa-comment"></i>
-                </span>
-              </button>
-            </span>
-            <span className="post_index_article_section_likes_outerspan">
-              <button className="post_index_article_section_likes_button">
-                <span className="post_index_article_section_likes_innerspan">
-                  <i className="far fa-handshake"></i>
-                </span>
-              </button>
-            </span>
-            <span className="post_index_article_section_likes_outerspan_bookmark">
-              <button className="post_index_article_section_likes_button">
-                <span className="post_index_article_section_likes_innerspan_bookmark">
-                  <i className="far fa-bookmark"></i>
-                </span>
-              </button>
-            </span>
+  
           </section>
           <section className="post_index_article_section_likescount_section_container">
             <div className="post_index_article_section_likescount_container">
@@ -123,14 +134,45 @@ class PostIndexItem extends React.Component {
           <PostIndexCommentFormCreateContainer postId={post.id} />
         </div>
         <div className="post_index_article_header_useroptions_container">
-          <button className="post_index_article_header_userbutton">
-            <span
-              className="post_index_article_header_userspan"
-              aria-label="More options"
+         
+          <div className="post_index_button_wrapper">
+            <div className="post_index_button_main"></div>
+
+            <div
+              role="button"
+              onClick={this.open}
+              className="post_show_button_container"
             >
-              ...
-            </span>
-          </button>
+              <div className="post_index_button_container">
+                <button className="post_show_button">
+                  <span className="post_show_span">...</span>
+                </button>
+              </div>
+            </div>
+            {this.state.open ? (
+              <>
+                <div className="modal" onClick={this.close}>
+                  <ul
+                    className="options-index-dropdown-menu"
+                    ref={ref => (this.ref = ref)}
+                  >
+                    <li
+                      className="options-index-dropdown-items"
+                      onClick={this.deletePost}
+                    >
+                      Delete Post
+                            </li>
+                    <Link
+                      to={`/posts/${post.id}/edit`}
+                      className="options-index-dropdown-items-last"
+                    >
+                      <li>Update Post</li>
+                    </Link>
+                  </ul>
+                </div>
+              </>
+            ) : null}
+          </div>
         </div>
       </article>
     );
@@ -220,3 +262,34 @@ export default PostIndexItem;
         //   </div>
         // </section>;
 
+// <button className="post_index_article_header_userbutton">
+//   <span
+//     className="post_index_article_header_userspan"
+//     aria-label="More options"
+//   >
+//     ...
+//             </span>
+// </button>
+
+
+// <span className="post_index_article_section_likes_outerspan">
+//   <button className="post_index_article_section_likes_button">
+//     <span className="post_index_article_section_likes_innerspan">
+//       <i className="far fa-comment"></i>
+//     </span>
+//   </button>
+// </span>
+// <span className="post_index_article_section_likes_outerspan">
+//   <button className="post_index_article_section_likes_button">
+//     <span className="post_index_article_section_likes_innerspan">
+//       <i className="far fa-handshake"></i>
+//     </span>
+//   </button>
+// </span>
+// <span className="post_index_article_section_likes_outerspan_bookmark">
+//   <button className="post_index_article_section_likes_button">
+//     <span className="post_index_article_section_likes_innerspan_bookmark">
+//       <i className="far fa-bookmark"></i>
+//     </span>
+//   </button>
+// </span>

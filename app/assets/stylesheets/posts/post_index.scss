@@ -254,6 +254,77 @@
   // border: 2px dotted fuchsia;
 }
 
+// model
+.post_index_button_wrapper {
+  position: relative;
+  // border: 1px solid fuchsia; 
+}
+
+.post_index_button_main {
+  display: flex;
+  height: 100px;
+  width: 100px;
+  // border: 1px solid blue; 
+}
+
+.post_index_button_container {
+  display: flex;
+  position: absolute;
+  top: 28.5%;
+  left: -50%;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.options-index-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 400px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.options-index-dropdown-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: .98em;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 100;
+  text-decoration: none;
+  color: black;
+  height: 48px;
+  width: 100%;
+  padding: 4px 8px;
+  border-bottom: .5px solid lightgray;
+}
+
+.options-index-dropdown-items-last {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: .98em;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 100;
+  text-decoration: none;
+  color: black;
+  height: 48px;
+  width: 100%;
+  padding: 4px 8px;
+}
+
+
+
 .post_index_article_header_userbutton {
   display: flex;
   justify-content: center;
@@ -745,28 +816,28 @@ color: rgb(126, 126, 126);
 
 
 
-.slider {
-  /* line them up horizontally */
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  list-style: none;
-  // align-items: center;
+// .slider {
+//   /* line them up horizontally */
+//   display: flex;
+//   flex-direction: column;
+//   text-align: center;
+//   list-style: none;
+//   // align-items: center;
 
-  /* allow for scrolling */
-  overflow-x: auto;
+//   /* allow for scrolling */
+//   overflow-x: auto;
 
-  /* make it smooth on iOS */
-  -webkit-overflow-scrolling: touch;
-}
-.slider > div {
-  /* make sure the width is honored */
-  flex-shrink: 0;
-  min-width: 0;
-  width: 100%;
-  height: 300px;
-  border: 2px dotted fuchsia;
-}
+//   /* make it smooth on iOS */
+//   -webkit-overflow-scrolling: touch;
+// }
+// .slider > div {
+//   /* make sure the width is honored */
+//   flex-shrink: 0;
+//   min-width: 0;
+//   width: 100%;
+//   height: 300px;
+//   border: 2px dotted fuchsia;
+// }
 
 
 
