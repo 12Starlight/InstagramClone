@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   // debugger; 
 
   return({
+    posts: state.posts,
     userId: state.session.id 
   })
 };
