@@ -84,7 +84,7 @@ class CreatePostForm extends React.Component {
               <input
                 className="input_boxes_input"
                 type="text"
-                placeholder={"title"}
+                placeholder={""}
                 value={this.state.title}
                 onChange={this.update("title")}
               />
@@ -95,7 +95,7 @@ class CreatePostForm extends React.Component {
               <textarea
                 maxLength="150"
                 className="input_boxes_textarea"
-                placeholder={"description"}
+                placeholder={""}
                 value={this.state.description}
                 onChange={this.update("description")}
               />
