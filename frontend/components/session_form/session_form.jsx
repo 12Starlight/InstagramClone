@@ -8,8 +8,13 @@ class SessionForm extends React.Component {
       password: ""
     };
 
-    this.handleDemoUser = this.handleDemoUser.bind(this),
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDemoStark = this.handleDemoStark.bind(this);
+    this.handleDemoAngelina = this.handleDemoAngelina.bind(this);
+    this.handleDemoSarah = this.handleDemoSarah.bind(this);
+    this.handleDemoBrad = this.handleDemoBrad.bind(this);
+    this.handleDemoFoodie = this.handleDemoFoodie.bind(this);
+    this.handleDemoMusic = this.handleDemoMusic.bind(this); 
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -24,11 +29,42 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  handleDemoUser(e) {
+  // Demo Users
+  handleDemoStark(e) {
     e.preventDefault();
-    let demo = {username: "Demo", password: "123456" }
+    let stark = {username: "Tony Stark", password: "123456" }
 
-    this.props.action(demo);
+    this.props.action(stark);
+  }
+  handleDemoAngelina(e) {
+    e.preventDefault();
+    let angel = {username: "Angelina Jolie", password: "123456" }
+
+    this.props.action(angel);
+  }
+  handleDemoSarah(e) {
+    e.preventDefault();
+    let sarah = { username: "Sarah Avengleu", password: "123456" }
+
+    this.props.action(sarah);
+  }
+  handleDemoBrad(e) {
+    e.preventDefault();
+    let brad = {username: "Brad Jessin", password: "123456" }
+
+    this.props.action(brad);
+  }
+  handleDemoFoodie(e) {
+    e.preventDefault();
+    let foodie = {username: "Foodie Lover", password: "123456" }
+
+    this.props.action(foodie);
+  }
+  handleDemoMusic(e) {
+    e.preventDefault();
+    let music = {username: "Music Lover", password: "123456" }
+
+    this.props.action(music);
   }
 
 
@@ -58,7 +94,14 @@ class SessionForm extends React.Component {
               <br />
               <span className="br1">Please {this.props.formType} or {this.props.navLink}</span>
               <br />
-              <button className="demo" onClick={ this.handleDemoUser }>demo</button>
+              <div className='demo-container'>
+                <button className="demo" onClick={this.handleDemoStark}>Tony Stark</button>
+                <button className="demo" onClick={this.handleDemoAngelina}>Angelina Jolie</button>
+                <button className="demo" onClick={this.handleDemoSarah}>Sarah Avengleu</button>
+                <button className="demo" onClick={this.handleDemoBrad}>Brad Jessin</button>
+                <button className="demo" onClick={this.handleDemoFoodie}>Foodie Lover</button>
+                <button className="demo" onClick={this.handleDemoMusic}>Music</button>
+              </div>
             </div>
             {this.renderErrors()}
             <div className="login-form">
