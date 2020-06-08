@@ -109,7 +109,7 @@ class SessionForm extends React.Component {
                 <button className="demo" onClick={this.handleDemoSarah}>Sarah Avengleu</button>
                 <button className="demo" onClick={this.handleDemoBrad}>Brad Jessin</button>
                 <button className="demo" onClick={this.handleDemoFoodie}>Foodie Lover</button>
-                <button className="demo" onClick={this.handleDemoMusic}>Music</button>
+                <button className="demo" onClick={this.handleDemoMusic}>Music Lover</button>
               </div>
             </div>
             {this.renderErrors()}
