@@ -2,10 +2,9 @@
   display: grid;
   margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
   height: 300px;
   grid-gap: 20px;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   // border: 2px dotted fuchsia;
 }
 
@@ -13,6 +12,8 @@
   display: flex;
   width: 295px;
   height: 295px;
+  // max-width: 100%;
+  // max-height: 100%; 
   overflow: hidden;
   background-size: contain; 
   // border: 1px solid rgb(0, 204, 255);
