@@ -21,20 +21,25 @@
   flex-grow: 1; 
   flex-direction: column;
   position: absolute;
-  justify-content: center;
-  align-items: stretch;
+  // justify-content: center;
+  // align-items: stretch;
   top: 8%;
   left: 22.5%;
-  box-sizing: content-box;
+  // box-sizing: content-box;
   // padding: 40px 20px;
-  min-height: 450px;
-  height: 600px;
+  // min-height: 450px;
+  // height: 600px;
   width: calc(100% - 40px);
-  min-width: 736;
+  // min-width: 736px;
   max-width: 935px;
   margin: 0 auto 16px auto; 
+  // height: 100%;
+  // width: 100%; 
   -webkit-box-shadow: -2px 6px 49px -9px rgba(14,73,176,0.85);
   background-color: white; 
+  // border: 1px solid fuchsia; 
+     overflow: hidden;
+  background-size: contain;
 }
 
 .post_show_inner_box_wrapper {
@@ -65,60 +70,72 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
+  // align-items: stretch;
+  // justify-content: center;
   margin-right: 335px;
   min-height: 450px;
   height: 600px;
   background-color: #fafafa;
-  // border: 1px solid rgb(0, 204, 255);
+  // border: 1px dashed rgb(0, 204, 255);
 }
 
 .post_show_photo_container {
   display: flex;
-  position: relative;
+  // position: absolute;
   flex-direction: column;
-  flex-shrink: 0; 
-  align-items: stretch;
-  box-sizing: border-box;
-  touch-action: manipulation;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0; 
+  // flex-shrink: 0; 
+  // align-items: stretch;
+  // box-sizing: border-box;
+  // touch-action: manipulation;
+  // font: inherit;
+  // vertical-align: baseline;
+  // margin: 0;
+  // padding: 0; 
+  height: 100%;
+  height: 100%;
   // border: 1px solid rgb(0, 204, 255);
 }
 
 .post_show_photo_div {
-  display: block;
-  align-items: stretch;
-  box-sizing: border-box;
-  font: inherit;
+  display: flex;
+  // align-items: stretch;
+  // box-sizing: border-box;
+  // font: inherit;
   width: 100%;
+  height: 100%; 
   background-color: #efefef;
+  // border: 1px solid fuchsia;
 }
 
 .post_show_photo_padding {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  align-items: stretch;
-  font: inherit;
-  margin: 0;
-  padding-bottom: 100%;
-  padding-right: 50%;
+  // display: block;
+  // position: relative;
+  // overflow: hidden;
+  // align-items: stretch;
+  // font: inherit;
+  // margin: 0;
+  // padding-bottom: 80%;
+  // padding-right: 50%;
+  // overflow: hidden;
+  // background-size: contain;
+  height: 100%;
+  width: 100%; 
+  // border: 1px solid blue;
 }
 
 .post_show_photo {
   position: absolute;
-  user-select: none;
+  // user-select: none;
   left: 0;
-  top: 0; 
-  min-width: 0;
+  top: 0;
+  // min-width: 0;
   width: 100%;
-  min-height: 0;
+  // min-height: 0;
   height: 100%;
-  object-fit: cover;
+  // object-fit: cover;
+  overflow: hidden;
+  background-size: contain;
+  // border: 1px solid darkorange;  
 }
 
 .post_show_data_container {
