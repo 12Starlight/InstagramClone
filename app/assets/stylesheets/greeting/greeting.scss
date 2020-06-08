@@ -102,6 +102,7 @@
   display: flex;
   height: 150px;
   margin-bottom: 44px;
+  // border: 1px solid darkorange; 
 }
 
 .section-header-user {
@@ -110,6 +111,7 @@
   margin-right: 28px;
   height: 150px;
   width: 300px;
+  // border: 1px solid darkorange; 
 }
 
 .section-header-userpic {
@@ -126,6 +128,7 @@
   justify-content: center;
   height: 54px;
   border-top: 0.5px solid lightgray;
+  // border: 2px solid black;
 }
 
 .section-one-sub2 {
@@ -167,17 +170,26 @@
   color: darkgray;
 }
 
+.section-header-buttons-wrapper {
+  width: 100%; 
+  // border: 1px solid darkorange; 
+}
+
 .section-header-buttons-main {
   display: flex;
   align-items: center;
   height: 40px;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 2em;
   font-weight: 300;
   margin: 0 0 20px 0; 
+  // border: 1px solid darkorange; 
 }
 
 .section-header-username {
-  padding: 0 11% 0 0; 
+  display: flex;
+  padding: 0 2% 0 0; 
 }
 
 .section-header-button1 {
@@ -199,12 +211,15 @@
 
 .section-header-data {
   display: flex;
-  height: 20px;
-  margin: 0 0 20px;
+  align-items: center;
+  height: 40px;
+  // border: 1px solid blue; 
 }
 
 .section-header-nums {
+  display: flex;
   font-weight: 600;
+  // border: 1px solid fuchsia; 
 }
 
 .section-header-name {

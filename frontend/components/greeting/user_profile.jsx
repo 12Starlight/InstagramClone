@@ -34,7 +34,7 @@ class UserProfile extends React.Component {
               <div className="section-header-user">
                 <div className="section-header-userpic"></div>
               </div>
-              <div>
+              <div className='section-header-buttons-wrapper'>
                 <div className="section-header-buttons-main">
                   <div className='section-header-username'>{user.username}</div>
                   <Gear logout={ logout } /> 
