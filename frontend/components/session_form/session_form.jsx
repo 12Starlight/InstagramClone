@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     this.handleDemoFoodie = this.handleDemoFoodie.bind(this);
     this.handleDemoMusic = this.handleDemoMusic.bind(this); 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.enter = this.enter.bind(this); 
   }
 
   update(field) {
@@ -67,6 +68,14 @@ class SessionForm extends React.Component {
     this.props.action(music);
   }
 
+  enter(e) {
+    // debugger; 
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      this.setState({ username: '', password: '' });
+      this.props.action(this.state);
+    }
+  }
 
   renderErrors() {
     return (
@@ -88,7 +97,7 @@ class SessionForm extends React.Component {
         </div>
         <div className="login-form-container">
           <div className="logo"></div>
-          <form onSubmit={this.handleSubmit} className="login-form-box" >
+          <form onKeyPress={this.enter} onSubmit={this.handleSubmit} className="login-form-box" >
             <div className="text-container">
               Welcome To Instagram Clone!
               <br />
