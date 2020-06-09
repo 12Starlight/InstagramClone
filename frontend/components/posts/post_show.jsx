@@ -177,7 +177,7 @@ class PostShow extends React.Component {
                 <div className="post_show_time_container">
                   <a className="post_show_timelink">
                     <time className="post_show_time_linkspan">
-                      hours ago
+                      {/*hours ago*/}
                     </time>
                   </a>
                 </div>
