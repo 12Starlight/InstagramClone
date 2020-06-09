@@ -7,17 +7,23 @@
 
 .main {
   display: flex;
+  position: absolute;
   flex-direction: column;
-  height: 100%;
+  top: 8%;
+  height: 92%;
   width: 100%;
+  border: 1px solid fuchsia;
 }
 
 .nav-main {
   display: flex;
+  z-index: 1;
+  position: fixed;
   justify-content: center;
   background-color: white;
   align-items: center;
-  height: 80px;
+  height: 8%;
+  width: 100%;
   border-bottom: 1px solid lightgray;
 }
 
