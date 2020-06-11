@@ -96,13 +96,14 @@ class SessionForm extends React.Component {
           
         </div>
         <div className="login-form-container">
-          <div className="logo"></div>
+          <div className="logo">Insight</div>
           <form onKeyPress={this.enter} onSubmit={this.handleSubmit} className="login-form-box" >
             <div className="text-container">
-              Welcome To Instagram Clone!
-              <br />
-              <span className="br1">Please {this.props.formType} or {this.props.navLink}</span>
-              <br />
+              <div className='text-greeting'>
+                <div className='text-greeting-description'>Welcome To Insight!</div>
+                <div className="text-greeting-description">Please {this.props.formType} {'or '} {this.props.navLink}</div>          
+                <br />
+              </div>
               <div className='demo-container'>
                 <button className="demo" onClick={this.handleDemoStark}>Tony Stark</button>
                 <button className="demo" onClick={this.handleDemoAngelina}>Angelina Jolie</button>
