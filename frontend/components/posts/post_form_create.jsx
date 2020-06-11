@@ -74,7 +74,7 @@ class CreatePostForm extends React.Component {
 
     if (this.state.pic === false) {
      return(
-        <div type='button' className='post_preview_container'>
+        <div className='post_preview_container'>
           <label>
            <i className="fas fa-camera post_camera" ></i>
            <input
