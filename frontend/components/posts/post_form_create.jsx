@@ -76,7 +76,7 @@ class CreatePostForm extends React.Component {
      return(
         <div className='post_preview_container'>
           <label>
-           <i className="fas fa-camera post_camera" ></i>
+           <span className='post_camera'><i className="fas fa-camera" ></i></span>
            <input
              className="post_preview"
              type="file"
