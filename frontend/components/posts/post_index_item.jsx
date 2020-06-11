@@ -16,6 +16,7 @@ class PostIndexItem extends React.Component {
 
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
+    this.userAuth = this.userAuth.bind(this);
     this.ref = null;
     this.deletePost = this.deletePost.bind(this); 
   }
@@ -49,6 +50,58 @@ class PostIndexItem extends React.Component {
   //     this.props.fetchComments(this.props.postId);
   //   }
   // }
+
+  userAuth() {
+    const { post } = this.props;
+
+    if (this.props.currentUser === this.props.userId) {
+      return (
+        <div className="post_index_article_header_useroptions_container">
+
+        <div className="post_index_button_wrapper">
+          <div className="post_index_button_main"></div>
+
+          <div
+            role="button"
+            onClick={this.open}
+            className="post_show_button_container"
+          >
+            <div className="post_index_button_container">
+              <button className="post_show_button">
+                <span className="post_show_span">...</span>
+              </button>
+            </div>
+          </div>
+          {this.state.open ? (
+            <>
+              <div className="modal" onClick={this.close}>
+                <ul
+                  className="options-index-dropdown-menu"
+                  ref={ref => (this.ref = ref)}
+                >
+                  <li
+                    className="options-index-dropdown-items"
+                    onClick={this.deletePost}
+                  >
+                    Delete Post
+                              </li>
+                  <Link
+                    to={`/posts/${post.id}/edit`}
+                    className="options-index-dropdown-items-last"
+                  >
+                    <li>Update Post</li>
+                  </Link>
+                </ul>
+              </div>
+            </>
+          ) : null}
+        </div>
+        </div>
+      )
+    } else {
+      return (<div></div>)
+    }
+  }
 
 
   render() {
@@ -133,47 +186,7 @@ class PostIndexItem extends React.Component {
 
           <PostIndexCommentFormCreateContainer postId={post.id} />
         </div>
-        <div className="post_index_article_header_useroptions_container">
-         
-          <div className="post_index_button_wrapper">
-            <div className="post_index_button_main"></div>
-
-            <div
-              role="button"
-              onClick={this.open}
-              className="post_show_button_container"
-            >
-              <div className="post_index_button_container">
-                <button className="post_show_button">
-                  <span className="post_show_span">...</span>
-                </button>
-              </div>
-            </div>
-            {this.state.open ? (
-              <>
-                <div className="modal" onClick={this.close}>
-                  <ul
-                    className="options-index-dropdown-menu"
-                    ref={ref => (this.ref = ref)}
-                  >
-                    <li
-                      className="options-index-dropdown-items"
-                      onClick={this.deletePost}
-                    >
-                      Delete Post
-                            </li>
-                    <Link
-                      to={`/posts/${post.id}/edit`}
-                      className="options-index-dropdown-items-last"
-                    >
-                      <li>Update Post</li>
-                    </Link>
-                  </ul>
-                </div>
-              </>
-            ) : null}
-          </div>
-        </div>
+          {this.userAuth()}
       </article>
     );
   }

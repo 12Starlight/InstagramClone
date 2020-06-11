@@ -15,6 +15,7 @@ class PostShow extends React.Component {
     }
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
+    this.userAuth = this.userAuth.bind(this); 
     this.ref = null;
     this.deletePost = this.deletePost.bind(this);
   }
@@ -49,6 +50,59 @@ class PostShow extends React.Component {
     this.props.deletePost(this.props.post.id)
     this.props.history.push(`/`)
   } 
+
+  userAuth() {
+    if (this.props.currentUser === this.props.post.author_id) {
+      return (
+        <div className="">
+          <div className="post_show_button_main"></div>
+
+          <div
+            role="button"
+            onClick={this.open}
+            className="post_show_button_container"
+          >
+            <div className="post_show_button_container">
+              <button className="post_show_button">
+                <span className="post_show_span">...</span>
+              </button>
+            </div>
+          </div>
+          {this.state.open ? (
+            <>
+              <div className="modal" onClick={this.close}>
+                <ul
+                  className="options-dropdown-menu"
+                  ref={ref => (this.ref = ref)}
+                >
+                  <li
+                    className="options-dropdown-items"
+                    onClick={this.deletePost}
+                  >
+                    Delete Post
+                            </li>
+                  <Link
+                    to={`/posts/${this.props.post.id}/edit`}
+                    className="options-dropdown-items"
+                  >
+                    <li>Update Post</li>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="options-dropdown-items-cancel"
+                  >
+                    <li className="">Cancel</li>
+                  </Link>
+                </ul>
+              </div>
+            </>
+          ) : null}
+        </div>
+      )
+    } else {
+      return <div></div>
+    }
+  }
 
 
   render() {
@@ -95,50 +149,7 @@ class PostShow extends React.Component {
                     </div>
                   </div>
 
-                  <div className="post_show_button_wrappe">
-                    <div className="post_show_button_main"></div>
-
-                    <div
-                      role="button"
-                      onClick={this.open}
-                      className="post_show_button_container"
-                    >
-                      <div className="post_show_button_container">
-                        <button className="post_show_button">
-                          <span className="post_show_span">...</span>
-                        </button>
-                      </div>
-                    </div>
-                    {this.state.open ? (
-                      <>
-                        <div className="modal" onClick={this.close}>
-                          <ul
-                            className="options-dropdown-menu"
-                            ref={ref => (this.ref = ref)}
-                          >
-                            <li
-                              className="options-dropdown-items"
-                              onClick={this.deletePost}
-                            >
-                              Delete Post
-                            </li>
-                            <Link
-                              to={`/posts/${post.id}/edit`}
-                              className="options-dropdown-items"
-                            >
-                              <li>Update Post</li>
-                            </Link>
-                            <Link
-                              to="/"
-                              className="options-dropdown-items-cancel"
-                            >
-                              <li className="">Cancel</li>
-                            </Link>
-                          </ul>
-                        </div>
-                      </>
-                    ) : null}
-                  </div>
+                  {this.userAuth()}
                 </div>
               </div>
               <div className="post_show_separator">

@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 
   return ({
     post: post,
-    user: user
+    user: user,
+    currentUser: state.session.id 
   })
 };
 

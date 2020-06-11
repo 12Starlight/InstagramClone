@@ -17,12 +17,14 @@ class PostIndex extends React.Component {
 
 
   render() {
-    const { users, postId } = this.props;
+    const { users, postId, currentUser } = this.props;
     const posts = this.props.posts.map(post => {
       const userId = post.author_id
       const user = users[userId]
       return(
         <PostIndexItem
+          currentUser={ currentUser }
+          userId={ userId }
           key={ post.id }
           post={ post }
           user={ user }
