@@ -73,13 +73,19 @@
 }
 
 .nav-logo {
-  display: block;
+  // display: block;
+  display: flex;
+  justify-content: center;
+  font-size: 1.9em;
+  font-family: 'Balsamiq Sans', cursive;
+  color: rgb(65, 65, 65);
   height: 34px;
-  width: 100px;
+  // width: 100px;
   margin-left: 15px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(asset_path('instagram-logo.png'));
+  letter-spacing: -.05em;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-image: url(asset_path('instagram-logo.png'));
 }
 
 .nav-search {

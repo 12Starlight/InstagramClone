@@ -14,7 +14,7 @@ class Nav extends React.Component {
             <Link to="/" className="nav_user_icon_link">
               <div className="nav-icon"></div>
               <div className="nav-separator"></div>
-              <div className="nav-logo"></div>
+              <div className="nav-logo">Insight</div>
             </Link>
           </div>
 
