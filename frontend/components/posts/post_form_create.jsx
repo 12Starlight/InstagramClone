@@ -61,7 +61,7 @@ class CreatePostForm extends React.Component {
     const files = e.currentTarget.files;
     reader.onloadend = () => 
       this.setState({ imageURL: reader.result, photos: files });
-      debugger; 
+      // debugger; 
     if (files[0]) {
       reader.readAsDataURL(files[0]);
       this.setState({ pic: true });

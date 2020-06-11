@@ -11,7 +11,8 @@ class PostShow extends React.Component {
     super(props);
 
     this.state = {
-      open: false
+      open: false,
+      logic: false
     }
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
@@ -47,8 +48,8 @@ class PostShow extends React.Component {
   // }
 
   deletePost() {
+    this.props.history.push('/')
     this.props.deletePost(this.props.post.id)
-    this.props.history.push(`/`)
   } 
 
   userAuth() {

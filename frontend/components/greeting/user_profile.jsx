@@ -24,7 +24,7 @@ class UserProfile extends React.Component {
       return "Loading ..."
     }
 
-    debugger; 
+    // debugger; 
 
     return (
       <div className="main"> 
