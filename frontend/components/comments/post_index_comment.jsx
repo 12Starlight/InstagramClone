@@ -8,12 +8,13 @@ class PostIndexComment extends React.Component {
   }
 
   render() {
-    const { comments, users, user, post } = this.props;
+    const { comments, users, user, post, currentUser } = this.props;
     const allComments = comments.map(comment => {
     const commentUser = users[comment.user_id];
 
       return (
         <PostIndexCommentItem
+          currentUser={currentUser}
           key={comment.id}
           comment={comment}
           user={user}

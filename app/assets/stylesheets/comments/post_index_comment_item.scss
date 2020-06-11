@@ -118,6 +118,23 @@
   font-size: .9em;
 }
 
+.post_index_comment_item_delete {
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: none;
+}
+
+.post_index_comment_item_delete_icon {
+  display: none;
+  font-size: 1em;
+  color: rgba(0, 0, 255, 0.198);
+}
+
+.post_index_comment_item_delete_icon:hover {
+  color: rgba(0, 0, 255, 0.678);
+}
+
 .post_index_comment_item_time_wrapper {
   justify-content: flex-start;
   align-items: stretch;

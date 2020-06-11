@@ -10,10 +10,14 @@ class CommentIndex extends React.Component {
     this.displayComment = this.displayComment.bind(this);
   }
 
-
-
   componentDidMount() {
     this.props.fetchComments(this.props.post_id)
+  }
+
+  componentDidUpdate(prevProp) {
+    if (this.props.comments.length !== prevProp.comments.length) {
+      this.props.fetchComments(this.props.post_id)
+    }
   }
 
   displayComment() {
@@ -67,12 +71,13 @@ class CommentIndex extends React.Component {
 
 
   render() {
-    const { comments, users, user, post } = this.props; 
+    const { comments, users, user, post, currentUser } = this.props; 
     const allComments = comments.map((comment) => {  
     const commentUser = users[comment.user_id] 
 
       return (
           <CommentIndexItem 
+            currentUser={ currentUser }
             key={ comment.id }
             comment={ comment }
             user={ user }

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import PostIndexComment from "./post_index_comment";
-import { fetchComments } from "../../actions/comment_actions";
+import { fetchComments, deleteComment } from "../../actions/comment_actions";
 import { withRouter } from "react-router-dom";
 
 // mapStateToProps
@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   let post_id = ownProps.postId;
   const post = state.entities.posts[post_id];
   const user = state.entities.users[post.author_id];
+  const currentUser = state.session.id; 
   let comments = [];
 
   if (post) {
@@ -17,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
     );
   }
 
-  return { users, user, comments, post, post_id };
+  return { users, user, comments, post, post_id, currentUser };
 };
 
 // mapDispatchToProps
