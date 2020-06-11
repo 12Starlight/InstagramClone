@@ -12,8 +12,8 @@ class Nav extends React.Component {
         <div className="nav-center">
           <div className="nav-one">
             <Link to="/" className="nav_user_icon_link">
-              <div className="nav-icon"></div>
-              <div className="nav-separator"></div>
+              <div className='nav-icon-wrapper'><div className="nav-icon"></div></div>
+              <div className='nav-separator-wrapper'><div className="nav-separator"></div></div>
               <div className="nav-logo">Insight</div>
             </Link>
           </div>

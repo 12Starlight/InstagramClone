@@ -1,7 +1,13 @@
 .nav_user_icon_link {
   display: flex;
+  // align-content: center;
+  // justify-content: center;
+  text-align: center;
   text-decoration: none;
   color: black; 
+  // height: 100%;
+  // width: 100%;
+  // border: 1px solid blue;
 }
 
 textarea {
