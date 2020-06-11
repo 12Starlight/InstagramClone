@@ -21,6 +21,7 @@
 .post_form_inner_box {
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: absolute;
   justify-content: space-around;
   top: 14%;
@@ -54,13 +55,35 @@
 .post_preview_container {
   display: flex;
   justify-content: center;
-  padding: 0 0 15px 0; 
-  // border-bottom: .5px solid gray;
+  align-items: center;
+  text-align: center;
+  height: 225px;
+  width: 285px;
+  // cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+  // border-radius: 8px;
+  border: .09em solid #e9e9e9; 
 }
 
 .post_preview {
-  height: 225px;
-  width: 285px;
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.post_preview_display {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.post_camera {
+  font-size: 14em;
+  cursor: pointer;
+  color: darkgray;
+  // border: 1px solid fuchsia;
 }
 
 .post_form {
@@ -148,7 +171,11 @@
   height: 40px;
   outline: none;
   background: none;
-  border: .01em solid #e9e9e9; 
+  border: .09em solid #e9e9e9; 
+}
+
+.input_boxes_input:focus {
+  border: 1px solid lightgray;
 }
 
 .input_boxes_textarea {
@@ -160,7 +187,11 @@
   height: 40px;
   outline: none;
   background: none;
-  border: .01em solid #e9e9e9; 
+  border: .09em solid #e9e9e9; 
+}
+
+.input_boxes_textarea:focus {
+  border: 1px solid lightgray;
 }
 
 .post_form_button {

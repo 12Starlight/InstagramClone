@@ -10,7 +10,11 @@ class CreatePostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.formSubmissionHandler = this.formSubmissionHandler.bind(this);
     this.handleFile = this.handleFile.bind(this);
-    this.state = this.props.post;
+    this.switch = this.switch.bind(this);
+    this.state = {
+      post: this.props.post,
+      pic: false
+    }
   }
 
   update(field) {
@@ -56,27 +60,67 @@ class CreatePostForm extends React.Component {
     const reader = new FileReader();
     const files = e.currentTarget.files;
     reader.onloadend = () => 
-      this.setState({ imageURL: reader.result, photos: files});
-
+      this.setState({ imageURL: reader.result, photos: files });
+      debugger; 
     if (files[0]) {
       reader.readAsDataURL(files[0]);
+      this.setState({ pic: true });
     } else {
       this.setState({ imageURL: "", photos: null});
     }
   }
 
+  switch(e) {
 
+    if (this.state.pic === false) {
+     return(
+        <div type='button' className='post_preview_container'>
+          <label>
+           <i className="fas fa-camera post_camera" ></i>
+           <input
+             className="post_preview"
+             type="file"
+             hidden
+             onChange={this.handleFile}
+             multiple
+           />      
+          </label>
+        </div>
+      ) 
+    }
+    
+    if (this.state.pic === true) {
+      return(
+        <div className="post_preview_container">
+          <img className="post_preview_display" src={this.state.imageURL} />
+        </div>
+      )
+    }
+  }
+
+
+
+
+// <label className="post_form_file">
+//   Choose File
+//   <input
+//     className="post_form_file_input"
+//     type="file"
+//     hidden
+//     onChange={this.handleFile}
+//     multiple
+//   />
+// </label>
 
   render() {
+    
     return (
       <div className="post_form_wrapper">
         <div className="post_form_main"></div>
         <div className="post_form_inner_box">
           <h3 className="post_title">{this.props.formType}</h3>
 
-          <div className="post_preview_container">
-            <img className="post_preview" src={this.state.imageURL} />
-          </div>
+          {this.switch()}
 
           <form className="post_form" onSubmit={this.handleSubmit}>
             <label className="post_form_title">
@@ -101,16 +145,6 @@ class CreatePostForm extends React.Component {
               />
             </label>
 
-            <label className="post_form_file">
-              Choose File 
-              <input
-                className="post_form_file_input"
-                type="file"
-                hidden
-                onChange={this.handleFile}
-                multiple
-              />
-            </label>
             <div className="post_form_button_container">
               <input
                 className="post_form_button"
