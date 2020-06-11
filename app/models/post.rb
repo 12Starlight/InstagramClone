@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :title, presence: true 
+  validates :title, :description, presence: true 
   
   has_many_attached :photos
 

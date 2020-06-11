@@ -81,13 +81,14 @@ body {
   position: absolute;
   box-sizing: content-box;
   list-style: none;
-  flex-grow: 1;
+  // flex-grow: 1;
   overflow-y: scroll;
   font: inherit;
   vertical-align: baseline;
   left: 0;
-  width: calc(100% - 8px);
-  height: calc(100% - 32px);
+  // width: calc(100% - 8px);
+  // height: calc(100% - 32px);
+  // max-height: 100%;
   padding: 16px 12px;
   border: 0;
   // border: 2px dotted fuchsia;
