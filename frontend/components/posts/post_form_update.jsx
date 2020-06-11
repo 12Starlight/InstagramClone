@@ -56,6 +56,7 @@ class PostForm extends React.Component {
               <input 
                 className="input_boxes_update_input"
                 type="text"
+                placeholder={""}
                 value={ this.state.title }
                 onChange={ this.update("title")}
               />
@@ -66,7 +67,7 @@ class PostForm extends React.Component {
               <textarea
                 maxLength="150" 
                 className="input_boxes_update_textarea"
-                placeholder={"description"}
+                placeholder={""}
                 value={ this.state.description }
                 onChange={ this.update("description")}
               />

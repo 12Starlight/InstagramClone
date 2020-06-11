@@ -42,11 +42,11 @@ class PostIndexCommentFormCreate extends React.Component {
             <textarea
               aria-label="Add a comment..."
               placeholder="Add a comment..."
-              className="post_index_comment_section_formtext"
+              className="post_index_comment_section_formtext post_index_comment_form"
               maxLength="155"
               value={this.state.body}
               onChange={this.update("body")}
-            ></textarea>
+            />
             <button className="post_index_comment_section_formbutton" type="submit">
               Post
             </button>
