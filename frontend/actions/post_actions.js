@@ -29,9 +29,9 @@ const receivePostLike = (response) => {
   });
 }
 
-const removePost = postId => ({
+const removePost = (postId) => ({
   type: REMOVE_POST,
-  postId
+  postId: postId.post.id
 });
 
 const removePostLike = (response) => ({
@@ -69,8 +69,8 @@ export const updatePost = postSend => dispatch => (
   })
 );
 
-export const deletePost = (id) => dispatch => (
-  PostApiUtil.deletePost(id).then( post => dispatch(removePost(post)))
+export const deletePost = (postId) => dispatch => (
+  PostApiUtil.deletePost(postId).then( removedPost => dispatch(removePost(removedPost)))
 );
 
 export const deletePostLike = (postId) => dispatch => (

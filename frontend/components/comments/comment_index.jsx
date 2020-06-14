@@ -54,7 +54,7 @@ class CommentIndex extends React.Component {
               <div className="main_comment_time_innerdiv div">
                 <time
                   className="main_comment_time time"
-                  datetime=""
+                  dateTime=""
                   title=""
                 >
                   {/*9h*/}

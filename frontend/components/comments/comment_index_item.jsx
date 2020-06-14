@@ -36,7 +36,7 @@ class CommentIndexItem extends React.Component {
               <div className="comment_index_item_container_innerdiv div">
                 <div
                   role="button"
-                  tabindex="0"
+                  tabIndex="0"
                   className="comment_index_item_user_icon_button_wrapper div"
                 >
                   <div className="comment_index_item_user_icon_button">

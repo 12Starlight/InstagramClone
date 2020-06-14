@@ -8,9 +8,7 @@ const _nulPost = Object.freeze({
 
 const postsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  const posts = {};
-  let currentUserLikes = false; 
-  let likesCount = 0; 
+  let newState;
   let post; 
 
   switch(action.type) {
@@ -22,7 +20,10 @@ const postsReducer = (oldState = {}, action) => {
       post = oldState[action.postId];
       return merge({}, oldState, { [action.postId]: {liked: true, likes: post.likes + 1}});
     case REMOVE_POST: 
-      return _nulPost; 
+      newState = Object.assign({}, oldState);
+      delete newState[action.postId]
+      debugger; 
+      return newState;
     case REMOVE_POST_LIKE: 
       post = oldState[action.postId];
       return merge({}, oldState, { [action.postId]: { liked: false, likes: post.likes - 1}});

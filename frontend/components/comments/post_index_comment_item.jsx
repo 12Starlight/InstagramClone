@@ -13,7 +13,7 @@ class PostIndexCommentItem extends React.Component {
     if (this.props.currentUser !== this.props.comment.user_id) {
       return <div></div>
     } else {
-      return <button className='post_index_comment_item_delete' onClick={() => this.props.deleteComment(this.props.comment.id)} ><i class="fas fa-trash-alt post_index_comment_item_delete_icon"></i></button>
+      return <button className='post_index_comment_item_delete' onClick={() => this.props.deleteComment(this.props.comment.id)} ><i className="fas fa-trash-alt post_index_comment_item_delete_icon"></i></button>
     }
   }
 
