@@ -22,7 +22,7 @@ const postsReducer = (oldState = {}, action) => {
     case REMOVE_POST: 
       newState = Object.assign({}, oldState);
       delete newState[action.postId]
-      debugger; 
+      // debugger; 
       return newState;
     case REMOVE_POST_LIKE: 
       post = oldState[action.postId];

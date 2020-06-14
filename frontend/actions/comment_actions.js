@@ -31,7 +31,7 @@ const receiveCommentLike = (response) => {
 
 const removeComment = comment => ({
   type: REMOVE_COMMENT,
-  comment 
+  commentId: comment.id  
 });
 
 const removeCommentLike = (response) => ({

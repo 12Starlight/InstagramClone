@@ -8,6 +8,7 @@ const _nulComment = Object.freeze({
 
 const commentsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
+  let newState;
   let comment;
 
   switch(action.type) {
@@ -19,7 +20,9 @@ const commentsReducer = (oldState = {}, action) => {
       comment = oldState[action.commentId];
       return merge({}, oldState, { [action.commentId]: {liked: true, likes: comment.likes + 1}});
     case REMOVE_COMMENT:
-      return _nulComment;
+      newState = Object.assign({}, oldState);
+      delete newState[action.commentId];
+      return newState; 
     case REMOVE_COMMENT_LIKE:
       comment = oldState[action.commentId];
       return merge({}, oldState, { [action.commentId]: {liked: false, likes: comment.likes - 1}});
