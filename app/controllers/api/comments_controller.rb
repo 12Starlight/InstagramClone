@@ -10,7 +10,7 @@ class Api::CommentsController < ApplicationController
     else
       @comments = Comment.all 
     end
-    # render json: comments
+    # render json: commentsr
     render :index 
   end 
 
