@@ -9,7 +9,8 @@
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "babel-loader": "^8.0.6",
-    "lodash": "^4.17.15",
+    "jasmine": "^3.7.0",
+    "lodash": "^4.17.21",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-redux": "^7.1.1",
@@ -27,6 +28,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test2": "jasmine",
     "webpack": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
@@ -34,6 +36,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "jasmine-browser-runner": "^0.5.0",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9"
   },
